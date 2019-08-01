@@ -5,6 +5,6 @@ gradle/
 .classpath
 .project
 
-# Build project
+# Built project
 build/
 bin/
