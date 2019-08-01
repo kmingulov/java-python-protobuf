@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.github.kmingulov.log";
+option java_outer_classname = "LogServiceProto";
+
+enum LogLevel {
+    DEBUG = 0;
+    INFO = 1;
+    WARN = 2;
+    ERROR = 3;
+}
+
+message LogMessage {
+    LogLevel level = 1;
+    string message = 2;
+}
+
+message LogMessageList {
+    repeated LogMessage message = 1;
+}
