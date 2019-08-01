@@ -1,0 +1,7 @@
+task default: %w[build]
+
+task :build do
+  sh 'rm -rf lib/proto'
+  sh 'mkdir -p lib/proto'
+  sh 'protoc -I ../proto --ruby_out ./lib/proto ../proto/*.proto'
+end
