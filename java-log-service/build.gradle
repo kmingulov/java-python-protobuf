@@ -16,6 +16,14 @@ dependencies {
     implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.9.0'
 }
 
+sourceSets {
+    main {
+        proto {
+            srcDir '../proto'
+        }
+    }
+}
+
 protobuf {
     protoc {
         artifact = 'com.google.protobuf:protoc:3.9.0'
