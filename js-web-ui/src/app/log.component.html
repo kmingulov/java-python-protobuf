@@ -1,0 +1,26 @@
+<section class="mat-typography">
+  <h1>10 latest log messages</h1>
+
+  <ng-template [ngIf]="isLoading" [ngIfElse]="notLoading">
+    Loading...
+  </ng-template>
+
+  <ng-template #notLoading>
+    <ng-template [ngIf]="isError" [ngIfElse]="notError">
+      Failed to load data. Please try again later.
+    </ng-template>
+
+    <ng-template #notError>
+      <mat-card *ngFor="let message of messages" class="log-card">
+        <mat-card-content>
+          <div class="log {{ cssClassByLevelId[message.getLevel()] }}">
+            <div class="log-icon">
+              <i class="material-icons">{{ iconIdByLevelId[message.getLevel()] }}</i>
+            </div>
+            <pre class="log-entry">{{ message.getMessage() }}</pre>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </ng-template>
+  </ng-template>
+</section>

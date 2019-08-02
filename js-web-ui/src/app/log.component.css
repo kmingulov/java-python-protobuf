@@ -1,0 +1,25 @@
+.log-card {
+  margin-bottom: 20px;
+}
+
+.log {
+  display: flex;
+}
+
+.log-entry {
+  margin: 5px 0 0 10px;
+  white-space: pre-wrap;
+}
+
+.log-debug {
+  color: #aaaaaa;
+}
+
+.log-warn {
+  color: #dddd00;
+}
+
+.log-error {
+  color: red;
+  font-weight: bold;
+}
