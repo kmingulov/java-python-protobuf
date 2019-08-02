@@ -63,7 +63,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "js-web-ui:build"
+            "browserTarget": "js-web-ui:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
