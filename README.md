@@ -34,9 +34,10 @@ java -jar build/libs/java-log-service.jar
 
 ### `js-web-ui`
 
-Download UI dependencies using the following command:
+To download UI dependencies and compile the Protobuf files, use the following commands:
 ```
 npm install
+npm run protoc
 ```
 
 Then you can start the web UI as follows:
@@ -48,11 +49,9 @@ If the logging service `java-log-service` is up and running, the UI will display
 
 ### `ruby-client`
 
-To prepare environment for running the Ruby client, go to `ruby-client` and run:
+To download Ruby dependencies and compile the Protobuf files, use the following commands:
 ```
-# Download dependencies
 bundle install
-# Compile Protobuf files
 rake
 ```
 
