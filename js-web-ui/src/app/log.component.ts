@@ -34,7 +34,7 @@ export class LogComponent {
     this.logService.lastMessages(10)
       .subscribe(
         list => {
-          this.messages = list.getMessageList();
+          this.messages = list.getMessageList().reverse();
           this.isLoading = false;
           this.isError = false;
         },
