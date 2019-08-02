@@ -10,9 +10,20 @@ enum LogLevel {
     ERROR = 3;
 }
 
+message DateTime {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+    int32 hours = 4;
+    int32 minutes = 5;
+    int32 seconds = 6;
+}
+
 message LogMessage {
     LogLevel level = 1;
     string message = 2;
+    DateTime date_time = 3;
+    string source = 4;
 }
 
 message LogMessageList {

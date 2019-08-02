@@ -4,12 +4,20 @@ require_relative './proto/logservice_pb'
 
 class RemoteLog
 
-  def initialize(endpoint)
+  def initialize(endpoint, client_name)
     @endpoint = endpoint
+    @client_name = client_name
   end
 
   def log(level, msg)
-    message = LogMessage.new(:level => level, :message => msg)
+    time = Time.now.utc
+    date_time =  DateTime.new(:year => time.year, :month => time.month, :day => time.day,
+                              :hours => time.hour, :minutes => time.min, :seconds => time.sec)
+
+    message = LogMessage.new(:level => level,
+                             :message => msg,
+                             :date_time => date_time,
+                             :source => @client_name)
 
     uri = URI("#{@endpoint}/post")
     request = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/x-protobuf;charset=UTF-8')

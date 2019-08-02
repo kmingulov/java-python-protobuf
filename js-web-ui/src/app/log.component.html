@@ -17,7 +17,15 @@
             <div class="log-icon">
               <i class="material-icons">{{ iconIdByLevelId[message.getLevel()] }}</i>
             </div>
-            <pre class="log-entry">{{ message.getMessage() }}</pre>
+            <div class="log-entry">
+              <pre>{{ message.getMessage() }}</pre>
+              <small *ngIf="message.getDateTime()">
+                <br/>
+                {{ message.getSource() }} at
+                {{ message.getDateTime().getDay() }}/{{ message.getDateTime().getMonth() }}/{{ message.getDateTime().getYear() }}
+                {{ message.getDateTime().getHours() }}:{{ message.getDateTime().getMinutes() }}:{{ message.getDateTime().getSeconds() }}
+              </small>
+            </div>
           </div>
         </mat-card-content>
       </mat-card>

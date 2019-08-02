@@ -8,6 +8,11 @@
 
 .log-entry {
   margin: 5px 0 0 10px;
+  font-family: monospace;
+}
+
+.log-entry > pre {
+  margin: 0;
   white-space: pre-wrap;
 }
 

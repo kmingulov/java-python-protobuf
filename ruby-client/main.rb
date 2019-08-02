@@ -7,7 +7,7 @@ WRONG_COMMAND_ERR = 'ERROR: Unexpected command:'
 
 PROMPT = "\n> "
 
-log = RemoteLog.new('http://localhost:8080')
+log = RemoteLog.new('http://localhost:8080', 'RubyClient')
 
 puts 'Welcome to LogService Ruby Client!'
 puts
@@ -79,7 +79,13 @@ def execute_last(log, command_parts)
   end
 
   messages.each do |message|
-    puts "#{message.level}\t#{message.message}"
+    print "#{message.source} :: " unless message.source.empty?
+    print message.level
+
+    dt = message.date_time
+    print " :: #{dt.day}/#{dt.month}/#{dt.year} #{dt.hours}:#{dt.minutes}:#{dt.seconds}" unless dt.nil?
+
+    puts "\n#{message.message}\n\n"
   end
 end
 
