@@ -1,6 +1,6 @@
-# protobuf-example
+# multilanguage-protobuf-example
 
-**protobuf-example** is a simple example project demonstrating communication between Java/JavaScript/Ruby code using Protocol Buffers (protobuf).
+**multilanguage-protobuf-example** is a simple example project demonstrating communication between Java/JavaScript/Ruby code using Protocol Buffers (protobuf).
 
 The project consists of several components:
 
@@ -27,14 +27,19 @@ To build the logging service, go to `java-log-service` and run:
 ./gradlew build
 ```
 
-To run the service, run:
+To run the service, execute:
 ```
 java -jar build/libs/java-log-service.jar
 ```
 
 ### `js-web-ui`
 
-To run the web UI in, use the following command:
+Download UI dependencies using the following command:
+```
+npm install
+```
+
+Then you can start the web UI as follows:
 ```
 npm start
 ```
